@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@maplibre-react-native/examples": "workspace:*",
-    "@maplibre/maplibre-react-native": "workspace:*",
+    "@maplibre/maplibre-react-native": "workspace:package",
     "@react-native-masked-view/masked-view": "0.3.2",
     "expo": "55.0.25",
     "expo-dev-client": "55.0.35",

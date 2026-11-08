@@ -16,6 +16,7 @@ jobs:
     uses: ./.github/workflows/review.yml
 
   release:
+    if: github.repository == 'maplibre/maplibre-react-native'
     name: Release
     needs: [review]
     runs-on: ubuntu-latest

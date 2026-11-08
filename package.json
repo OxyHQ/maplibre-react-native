@@ -22,7 +22,7 @@
     "examples:shared": "yarn workspace @maplibre-react-native/examples",
     "examples:react-native": "yarn workspace react-native-app",
     "examples:expo": "yarn workspace expo-app",
-    "package": "yarn workspace @maplibre/maplibre-react-native",
+    "package": "yarn workspace @oxy.so/maplibre-react-native",
     "scripts": "yarn workspace scripts"
   },
   "packageManager": "yarn@4.10.3",
