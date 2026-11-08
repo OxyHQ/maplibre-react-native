@@ -45,3 +45,21 @@ the package to exist first, its owner performs the documented initial publish
 and immediately configures trust. Keep private until that setup is ready. Future
 releases must use the shared workflow. Package identity/version need review
 before publication is enabled.
+
+## Exact local alias probe
+
+Pack with `npm pack --ignore-scripts` from `package/`, then run:
+
+```sh
+node scripts/verify-alias.mjs <tarball> <consumer-root-with-node_modules> <new-output-directory>
+```
+
+The consumer toolchain must contain Expo autolinking and React Native codegen.
+The script installs the tarball under the existing dependency key, checks native
+identity, generates the Android schema/native source, and writes hashes and
+outputs. It never edits the supplied consumer. This is a local file alias check;
+registry npm-alias installation remains pending until publication.
+
+The podspec now names the fork and the shared release workflow's future
+`<package-name>@<version>` tag. That tag does not exist while this package is
+private. CocoaPods/Ruby execution is not verified on this Linux host.

@@ -1,0 +1,27 @@
+{
+  "sha256": "c25ab1d3d4a22e1003d35b505ddffc840f57704fae5a373cf7c98cde4368c242",
+  "name": "@oxy.so/maplibre-react-native",
+  "version": "11.5.1-oxy.0",
+  "node": "v24.21.0",
+  "reactNative": "0.88.0",
+  "descriptors": [
+    "MLRNAndroidTextureMapViewComponentDescriptor",
+    "MLRNCalloutComponentDescriptor",
+    "MLRNCameraComponentDescriptor",
+    "MLRNGeoJSONSourceComponentDescriptor",
+    "MLRNImagesComponentDescriptor",
+    "MLRNImageSourceComponentDescriptor",
+    "MLRNLayerComponentDescriptor",
+    "MLRNMapViewComponentDescriptor",
+    "MLRNMarkerViewComponentDescriptor",
+    "MLRNNativeUserLocationComponentDescriptor",
+    "MLRNPointAnnotationComponentDescriptor",
+    "MLRNRasterDEMSourceComponentDescriptor",
+    "MLRNRasterSourceComponentDescriptor",
+    "MLRNVectorSourceComponentDescriptor"
+  ],
+  "scope": "Local tarball installed under consumer dependency key. Not a registry npm-alias or native compilation acceptance.",
+  "generatedFiles": 57,
+  "podspecRuntime": "not run: Ruby/CocoaPods unavailable",
+  "nativeBuild": "pending"
+}
