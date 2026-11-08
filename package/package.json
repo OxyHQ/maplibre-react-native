@@ -1,7 +1,7 @@
 {
-  "name": "@maplibre/maplibre-react-native",
+  "name": "@oxy.so/maplibre-react-native",
   "description": "React Native library for creating maps with MapLibre Native for Android & iOS",
-  "version": "11.5.1",
+  "version": "11.5.1-oxy.0",
   "publishConfig": {
     "access": "public",
     "provenance": true
@@ -19,10 +19,11 @@
   "homepage": "https://github.com/maplibre/maplibre-react-native#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maplibre/maplibre-react-native.git"
+    "url": "git+https://github.com/OxyHQ/maplibre-react-native.git",
+    "directory": "package"
   },
   "bugs": {
-    "url": "https://github.com/maplibre/maplibre-react-native/issues"
+    "url": "https://github.com/OxyHQ/maplibre-react-native/issues"
   },
   "scripts": {
     "format:clang-format": "find ios -type f \\( -name \"*.h\" -o -name \"*.m\" -o -name \"*.mm\" \\) -exec clang-format -i {} +",
@@ -32,8 +33,8 @@
     "lint:eslint": "eslint ./ --max-warnings 0",
     "lint:eslint:fix": "eslint ./ --fix",
     "test": "jest",
-    "prepack": "cp ../LICENSE.md ./LICENSE.md && cp ../README.md ./README.md && bob build",
-    "postpack": "rm ./LICENSE.md && rm ./README.md"
+    "build": "cp ../LICENSE.md ./LICENSE.md && cp ../README.md ./README.md && bob build",
+    "postbuild": "node ../scripts/verify-package.mjs"
   },
   "packageManager": "yarn@4.10.3",
   "main": "./lib/commonjs/index.js",
@@ -187,5 +188,6 @@
     "test-renderer": "1.2.0",
     "ts-node": "10.9.2",
     "typescript": "5.9.3"
-  }
+  },
+  "private": true
 }

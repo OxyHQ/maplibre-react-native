@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@jest/expect-utils": "29.7.0",
-    "@maplibre/maplibre-react-native": "workspace:*",
+    "@maplibre/maplibre-react-native": "workspace:package",
     "@react-navigation/native": "7.4.1",
     "@react-navigation/stack": "7.11.2",
     "@turf/along": "7.4.0",

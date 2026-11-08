@@ -86,7 +86,7 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Build Library
-        run: yarn package prepack
+        run: yarn package build && yarn package postbuild
 
   build-docs:
     name: Build Docs

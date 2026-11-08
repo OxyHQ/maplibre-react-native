@@ -7,6 +7,7 @@ import com.facebook.react.bridge.ReadableType
 import com.facebook.react.bridge.WritableNativeMap
 import org.maplibre.android.style.expressions.Expression
 import org.maplibre.android.style.layers.TransitionOptions
+import org.maplibre.android.utils.ColorUtils
 import org.maplibre.reactnative.utils.ExpressionParser.fromTyped
 import org.maplibre.reactnative.utils.ImageEntry
 
@@ -79,6 +80,20 @@ class MLRNStyleValue(
     fun getArray(key: String): ReadableArray? = mPayload!!.getArray(key)
 
     fun getBoolean(key: String): Boolean = mPayload!!.getBoolean(key)
+
+    fun getFloatArrayOrScalar(key: String): Array<Float?> =
+        if (mPayload!!.getType(key) == ReadableType.Number) {
+            arrayOf(getFloat(key))
+        } else {
+            getFloatArray(key)
+        }
+
+    fun getColorArray(key: String): Array<String?> =
+        when (mPayload!!.getType(key)) {
+            ReadableType.Number -> arrayOf(ColorUtils.colorToRgbaString(getInt(key)))
+            ReadableType.String -> arrayOf(getString(key))
+            else -> getStringArray(key)
+        }
 
     fun getFloatArray(key: String): Array<Float?> {
         val arr = getArray(key)
