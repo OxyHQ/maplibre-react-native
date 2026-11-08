@@ -3,8 +3,8 @@
 package org.maplibre.reactnative.components.layer.style
 
 import org.maplibre.android.style.layers.BackgroundLayer
-import org.maplibre.android.style.layers.CircleLayer
 import org.maplibre.android.style.layers.ColorReliefLayer
+import org.maplibre.android.style.layers.CircleLayer
 import org.maplibre.android.style.layers.FillExtrusionLayer
 import org.maplibre.android.style.layers.FillLayer
 import org.maplibre.android.style.layers.HeatmapLayer
@@ -2828,7 +2828,7 @@ object MLRNStyleFactory {
         if (styleValue.isExpression()) {
             layer.setProperties(PropertyFactory.hillshadeIlluminationDirection(styleValue.getExpression()))
         } else {
-            layer.setProperties(PropertyFactory.hillshadeIlluminationDirection(styleValue.getFloatArray(VALUE_KEY)))
+            layer.setProperties(PropertyFactory.hillshadeIlluminationDirection(styleValue.getFloatArrayOrScalar(VALUE_KEY)))
         }
     }
 
@@ -2839,7 +2839,7 @@ object MLRNStyleFactory {
         if (styleValue.isExpression()) {
             layer.setProperties(PropertyFactory.hillshadeIlluminationAltitude(styleValue.getExpression()))
         } else {
-            layer.setProperties(PropertyFactory.hillshadeIlluminationAltitude(styleValue.getFloatArray(VALUE_KEY)))
+            layer.setProperties(PropertyFactory.hillshadeIlluminationAltitude(styleValue.getFloatArrayOrScalar(VALUE_KEY)))
         }
     }
 
@@ -2882,7 +2882,7 @@ object MLRNStyleFactory {
         if (styleValue.isExpression()) {
             layer.setProperties(PropertyFactory.hillshadeShadowColor(styleValue.getExpression()))
         } else {
-            layer.setProperties(PropertyFactory.hillshadeShadowColor(styleValue.getStringArray(VALUE_KEY)))
+            layer.setProperties(PropertyFactory.hillshadeShadowColor(styleValue.getColorArray(VALUE_KEY)))
         }
     }
 
@@ -2903,7 +2903,7 @@ object MLRNStyleFactory {
         if (styleValue.isExpression()) {
             layer.setProperties(PropertyFactory.hillshadeHighlightColor(styleValue.getExpression()))
         } else {
-            layer.setProperties(PropertyFactory.hillshadeHighlightColor(styleValue.getStringArray(VALUE_KEY)))
+            layer.setProperties(PropertyFactory.hillshadeHighlightColor(styleValue.getColorArray(VALUE_KEY)))
         }
     }
 

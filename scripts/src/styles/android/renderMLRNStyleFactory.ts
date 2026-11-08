@@ -42,6 +42,10 @@ function androidInputType(type: string, value?: string): string {
 }
 
 function androidGetConfigType(androidType: string, prop: LayerProperty) {
+  if (prop.type === "colorArray") return "styleValue.getColorArray(VALUE_KEY)";
+  if (prop.type === "numberArray")
+    return "styleValue.getFloatArrayOrScalar(VALUE_KEY)";
+
   switch (androidType) {
     case "Integer":
       return "styleValue.getInt(VALUE_KEY)";

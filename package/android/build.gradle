@@ -9,6 +9,8 @@ buildscript {
     }
 
     dependencies {
+    androidTestImplementation "androidx.test.ext:junit:1.2.1"
+    androidTestImplementation "androidx.test:runner:1.6.2"
         classpath "com.android.tools.build:gradle:8.7.2"
         // noinspection DifferentKotlinGradleVersion
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${getExtOrDefault('kotlinVersion')}"
@@ -50,6 +52,7 @@ android {
     compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
 
     defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         minSdkVersion getExtOrIntegerDefault("minSdkVersion")
         targetSdkVersion getExtOrIntegerDefault("targetSdkVersion")
     }
